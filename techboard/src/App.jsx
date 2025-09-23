@@ -37,10 +37,10 @@ function App() {
 
   const eventos =[
     {
-      capa: './public/imagens/imagem front end.png',
+      capa: '/imagens/imagem front end.png',
       tema: temas[0],
       data: new Date(),
-      Titulo: 'Mulheres No Front'
+      titulo: 'Mulheres No Front'
     }
   ]
 
