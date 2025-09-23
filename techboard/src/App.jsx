@@ -1,6 +1,7 @@
 
 import './App.css'
 import { Banner } from './componentes/Banner'
+import { CardEvento } from './componentes/CardEvento'
 import { FormulariodeEvento } from './componentes/FormularioDeEvento'
 import { Tema } from './componentes/Tema'
 
@@ -34,6 +35,14 @@ function App() {
     }
   ]
 
+  const eventos =[
+    {
+      capa: './public/imagens/imagem front end.png',
+      tema: temas[0],
+      data: new Date(),
+      Titulo: 'Mulheres No Front'
+    }
+  ]
 
   return (
     <main>
@@ -48,6 +57,7 @@ function App() {
         return (
           <section key={item.id}>
             <Tema tema={item}></Tema>
+            <CardEvento evento={eventos[0]}></CardEvento>
           </section>
         )
       })}
