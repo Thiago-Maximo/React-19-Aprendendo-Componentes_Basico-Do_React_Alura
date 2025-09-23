@@ -36,44 +36,22 @@ function App() {
 
 
   return (
-     <main>
-        <header>
-          <img src='/imagens/logo.png'></img>
-        </header>
+    <main>
+      <header>
+        <img src='/imagens/logo.png'></img>
+      </header>
 
-        <Banner></Banner>
+      <Banner></Banner>
 
-        <FormulariodeEvento></FormulariodeEvento>
-
-        <section>
-          <Tema tema={temas[0]}></Tema>
-        </section>
-
-        
-        <section>
-          <Tema tema={temas[1]}></Tema>
-        </section>
-
-        
-        <section>
-          <Tema tema={temas[2]}></Tema>
-        </section>
-
-        
-        <section>
-          <Tema tema={temas[3]}></Tema>
-        </section>
-
-        
-        <section>
-          <Tema tema={temas[4]}></Tema>
-        </section>
-
-        
-        <section>
-          <Tema tema={temas[5]}></Tema>
-        </section>
-     </main>
+      <FormulariodeEvento></FormulariodeEvento>
+      {temas.map(function (item) {
+        return (
+          <section key={item.id}>
+            <Tema tema={item}></Tema>
+          </section>
+        )
+      })}
+    </main>
   )
 }
 
