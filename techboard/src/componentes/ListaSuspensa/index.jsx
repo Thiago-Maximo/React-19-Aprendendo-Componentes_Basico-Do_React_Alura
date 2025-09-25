@@ -3,7 +3,7 @@ import './lista.css'
  export function ListaSuspensa({itens}) {
     return (
         <>
-            <select className='lista-suspensa-form' defaultValue="">
+            <select   defaultValue="" className="lista-suspensa-form">
                 <option value="" disabled>
                     Selecione Uma Opção
                 </option>
