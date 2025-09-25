@@ -7,7 +7,7 @@ import { TituloFormulario } from "../TituloFormulario";
 import './formulario.css'
 
 
-export function FormulariodeEvento() {
+export function FormulariodeEvento({temas}) {
   return (
     <form className='form-evento'>
       <TituloFormulario>
@@ -34,8 +34,8 @@ export function FormulariodeEvento() {
         </CampoDeFormulario>
 
         <CampoDeFormulario>
-          <Label htmlFor='dataEvento'>Qual é a Data do Evento ?</Label>
-          <ListaSuspensa></ListaSuspensa>
+          <Label htmlFor='dataEvento'>Qual é o Tema do Evento ?</Label>
+          <ListaSuspensa id="tema" name="tema" itens={temas}></ListaSuspensa>
         </CampoDeFormulario>
 
         <div className="acoes">

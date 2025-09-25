@@ -52,7 +52,7 @@ function App() {
 
       <Banner></Banner>
 
-      <FormulariodeEvento></FormulariodeEvento>
+      <FormulariodeEvento temas={temas}></FormulariodeEvento>
       {temas.map(function (item) {
         return (
           <section key={item.id}>
