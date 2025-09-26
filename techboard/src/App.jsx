@@ -62,11 +62,19 @@ function App() {
       <FormulariodeEvento temas={temas} aoSubmeter={adicionarEvento}></FormulariodeEvento>
       <section className='container'>
         {temas.map(function (item) {
+          if (!eventos.some(function (evento){
+            return evento.tema.id == item.id
+          })){
+            return null
+          }
           return (
             <section key={item.id}>
               <Tema tema={item}></Tema>
               <div className='eventos'>
-                {eventos.map(function (item, index) {
+                {eventos.filter(function(evento){
+                  return evento.tema.id == item.id
+                })
+                .map(function (item, index) {
                   return <CardEvento evento={item} key={index}></CardEvento>
                 })}
               </div>
