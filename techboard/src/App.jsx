@@ -44,6 +44,11 @@ function App() {
     }
   ]
 
+  function adicionarEvento(evento){
+    eventos.push(evento)
+    console.log('Eventos =>', eventos)
+  }
+
   return (
     <main>
       <header>
@@ -52,12 +57,14 @@ function App() {
 
       <Banner></Banner>
 
-      <FormulariodeEvento temas={temas}></FormulariodeEvento>
+      <FormulariodeEvento temas={temas} aoSubmeter={adicionarEvento}></FormulariodeEvento>
       {temas.map(function (item) {
         return (
           <section key={item.id}>
             <Tema tema={item}></Tema>
-            <CardEvento evento={eventos[0]}></CardEvento>
+            {eventos.map(function(item,index){
+              return <CardEvento evento={item} key={index}></CardEvento>
+            })}
           </section>
         )
       })}

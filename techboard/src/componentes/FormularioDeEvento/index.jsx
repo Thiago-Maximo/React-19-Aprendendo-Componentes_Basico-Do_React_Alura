@@ -9,7 +9,7 @@ import './formulario.css'
 
 
 
-export function FormulariodeEvento({ temas }) {
+export function FormulariodeEvento({ temas, aoSubmeter }) {
 
   function aoFormSubmetido(form) {
     form.preventDefault(); // evita recarregar a página
@@ -22,7 +22,7 @@ export function FormulariodeEvento({ temas }) {
       titulo: formData.get('nomeEvento')
     }
 
-    console.log("Esse é o evento", evento)
+    aoSubmeter(evento)
   }
 
 
