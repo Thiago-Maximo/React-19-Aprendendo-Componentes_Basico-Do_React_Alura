@@ -17,7 +17,7 @@ export function FormulariodeEvento({ temas }) {
 
     const evento = {
       capa: formData.get('capa'), // ou 'arquivo', se você não mudar o name
-      tema: temas.find(item => item.id == formData.get('tema')),
+      tema: temas.find(item => item.id === Number(formData.get('tema'))),
       data: new Date(formData.get('dataEvento')),
       titulo: formData.get('nomeEvento')
     }
@@ -46,10 +46,10 @@ export function FormulariodeEvento({ temas }) {
         <CampoDeFormulario>
           <Label htmlFor='capa'>Qual é a imagem do Evento ?</Label>
           <CampoDeEntrada
-            type="file"
+            type="text"
             id='capa'
-            accept="image/*"
             name='capa'
+            placeholder='http://'
           />
         </CampoDeFormulario>
 
