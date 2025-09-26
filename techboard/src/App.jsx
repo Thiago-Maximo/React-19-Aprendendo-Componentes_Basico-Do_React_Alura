@@ -1,4 +1,5 @@
 
+import { useState } from 'react'
 import './App.css'
 import { Banner } from './componentes/Banner'
 import { CardEvento } from './componentes/CardEvento'
@@ -7,6 +8,7 @@ import { Tema } from './componentes/Tema'
 
 
 function App() {
+
 
   const temas = [
     {
@@ -35,18 +37,19 @@ function App() {
     }
   ]
 
-  const eventos =[
+  const [eventos, setEventos] = useState([
     {
       capa: '/imagens/imagem front end.png',
       tema: temas[0],
       data: new Date(),
       titulo: 'Mulheres No Front'
     }
-  ]
+  ])
 
-  function adicionarEvento(evento){
+  function adicionarEvento(evento) {
     eventos.push(evento)
-    console.log('Eventos =>', eventos)
+    //console.log('Eventos =>', eventos)
+    setEventos([...eventos, evento])
   }
 
   return (
@@ -62,7 +65,7 @@ function App() {
         return (
           <section key={item.id}>
             <Tema tema={item}></Tema>
-            {eventos.map(function(item,index){
+            {eventos.map(function (item, index) {
               return <CardEvento evento={item} key={index}></CardEvento>
             })}
           </section>
